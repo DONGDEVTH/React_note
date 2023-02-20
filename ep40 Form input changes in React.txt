@@ -1,0 +1,59 @@
+form.js
+
+import React from "react"
+
+export default function Form() {
+    const [firstName, setFirstName] = React.useState("")
+    
+    console.log(firstName)
+    
+    function handleChange(event) {
+        setFirstName(event.target.value)
+    }
+    
+    return (
+        <form>
+            <input
+                type="text"
+                placeholder="First Name"
+                onChange={handleChange}
+            />
+        </form>
+    )
+}
+
+-----------------------------------------------------------------------------------------------------------
+style.css
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+-------------------------------------------------------------------------------------------------------------
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import Form from "./Form"
+
+ReactDOM.render(<Form />, document.getElementById("root"))
+
+
+
+--------------------------------------------------------------------------------------------------------------
+index.html
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/different-ways-to-fetch-data-using-api-in-react/

@@ -1,0 +1,130 @@
+Joke.js
+
+import React from "react"
+
+export default function Joke(props) {
+    return (
+        <div>
+            {props.setup && <h3>Setup: {props.setup}</h3>}
+            <p>Punchline: {props.punchline}</p>
+            <hr />
+        </div>
+    )
+}
+
+-------------------------------------------------------------------------------------
+App.js
+
+import React from "react"
+import Joke from "./Joke"
+
+export default function App() {
+    return (
+        <div>
+            <Joke 
+                punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
+            />
+            <Joke 
+                setup="I got my daughter a fridge for her birthday." 
+                punchline="I can't wait to see her face light up when she opens it." 
+            />
+            <Joke 
+                setup="How did the hacker escape the police?" 
+                punchline="He just ransomware!" 
+            />
+            <Joke 
+                setup="Why don't pirates travel on mountain roads?" 
+                punchline="Scurvy." 
+            />
+            <Joke 
+                setup="Why do bees stay in the hive in the winter?" 
+                punchline="Swarm." 
+            />
+            <Joke 
+                setup="What's the best thing about Switzerland?" 
+                punchline="I don't know, but the flag is a big plus!" 
+            />
+        </div>
+    )
+}
+
+------------------------------------------------------------------------------------
+index.html
+
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+
+-------------------------------------------------------------------------------------
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+/* Challenge:
+
+EXTRA CREDIT:
+Some jokes are only a punchline with no setup:
+
+E.g.: "It’s hard to explain puns to kleptomaniacs because 
+they always take things literally."
+
+If you don't pass in a "question" prop, how might you make it only 
+show the punchline?
+*/
+----------------------------------------------------------------------------------------
+jokes.md
+
+Setup: I got my daughter a fridge for her birthday.
+Punchline: I can't wait to see her face light up when she opens it.
+
+---
+
+Setup: How did the hacker escape the police?
+Punchline: He just ransomware!
+
+---
+
+Setup: Why don't pirates travel on mountain roads?
+Punchline: Scurvy.
+
+---
+
+Setup: Why do bees stay in the hive in the winter?
+Punchline: Swarm.
+
+---
+
+Setup: What's the best thing about Switzerland?
+Punchline: I don't know, but the flag is a big plus!
+----------------------------------------------------------------------------------------
+**********************************
+**************************************************************************
+joke.js   newsssss
+
+import React from "react"
+
+export default function Joke(props) {
+    return (
+        <div>
+            <h3 style={{display: props.setup ? "block" : "none"}}>Setup: {props.setup}</h3>
+            <p>Punchline: {props.punchline}</p>
+            <hr />
+        </div>
+    )
+}
+----------------------------------------------------------------------------------------
+

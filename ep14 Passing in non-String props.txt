@@ -1,0 +1,121 @@
+Joke.js
+
+import React from "react"
+
+export default function Joke(props) {
+    console.log(props.comments)
+    return (
+        <div>
+            {props.setup && <h3>Setup: {props.setup}</h3>}
+            <p>Punchline: {props.punchline}</p>
+            <hr />
+        </div>
+    )
+}
+
+--------------------------------------------------------------------------------------------
+index.html
+
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+--------------------------------------------------------------------------------------------
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+
+ReactDOM.render(<App />, document.getElementById("root"))
+--------------------------------------------------------------------------------------------
+jokes.md
+
+Setup: I got my daughter a fridge for her birthday.
+Punchline: I can't wait to see her face light up when she opens it.
+
+---
+
+Setup: How did the hacker escape the police?
+Punchline: He just ransomware!
+
+---
+
+Setup: Why don't pirates travel on mountain roads?
+Punchline: Scurvy.
+
+---
+
+Setup: Why do bees stay in the hive in the winter?
+Punchline: Swarm.
+
+---
+
+Setup: What's the best thing about Switzerland?
+Punchline: I don't know, but the flag is a big plus!
+
+--------------------------------------------------------------------------------------------
+App.js
+
+import React from "react"
+import Joke from "./Joke"
+
+/*
+Challenge: Think critically - how would you pass in a prop that wasn't
+a string datatype.
+
+E.g. Say you want each Joke component to receive an "upvotes" and "downvotes"
+prop that is a number, as well as a prop with an array of comments, and a boolean
+of whether the joke is a pun (`isPun`).
+*/
+
+export default function App() {
+    return (
+        <div>
+            <Joke 
+                punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
+                isPun={true}
+                upvotes={10}
+                downvotes={2}
+                comments={[{author: "", body: "", title: ""}]}
+            />
+            <Joke 
+                setup="I got my daughter a fridge for her birthday." 
+                punchline="I can't wait to see her face light up when she opens it." 
+                isPun={false}
+            />
+            <Joke 
+                setup="How did the hacker escape the police?" 
+                punchline="He just ransomware!"
+                isPun={true}
+            />
+            <Joke 
+                setup="Why don't pirates travel on mountain roads?" 
+                punchline="Scurvy." 
+                isPun={true}
+            />
+            <Joke 
+                setup="Why do bees stay in the hive in the winter?" 
+                punchline="Swarm." 
+                isPun={true}
+            />
+            <Joke 
+                setup="What's the best thing about Switzerland?" 
+                punchline="I don't know, but the flag is a big plus!" 
+                isPun={false}
+            />
+        </div>
+    )
+}
+-----------------------------------------------------------------------------------------
+
+

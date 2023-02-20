@@ -1,0 +1,71 @@
+scrimba
+Learn React for free
+AirBnb clone
+Prop quiz! (Get it?? 😆)
+Destructuring props3:53
+Prop quiz! (Get it?? 😆)
+Expand for more info
+Destructuring props3:53
+quiz.md
+1
+2
+3
+4
+5
+7
+10
+11
+15
+16
+17
+18
+20
+21
+22
+23
+24
+25
+8
+6
+9
+12
+13
+14
+26
+27
+19
+28
+29
+1. What do props help us accomplish?
+Make a component more reusable.
+ 
+ 
+2. How do you pass a prop into a component?
+ 
+   DOM element? (e.g. <div blahblahblah={true}>) Why or why not?
+No, because the JSX we use to describe native DOM elements will
+ 
+ 
+4. How do I receive props in a component?
+function Navbar(props) {
+    return (
+        <header>
+            ...
+        </header>
+    )
+}
+ 
+<MyAwesomeHeader title="???" />
+3. Can I pass a custom prop (e.g. `blahblahblah={true}`) to a native
+be turned into REAL DOM elements by React. And real DOM elements
+only have the properties/attributes specified in the HTML specification.
+(Which doesn't include properties like `blahblahblah`)
+ 
+ 
+    console.log(props.blahblahblah)
+5. What data type is `props` when the component receives it?
+An object!
+No Results
+Console
+/index.html
+play resumed

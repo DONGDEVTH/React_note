@@ -1,0 +1,258 @@
+Separate.js
+
+import React from "react"
+
+
+export default function separate(props) {
+    return (
+        
+             
+          <div className="card">
+          <div>
+             <nav className="nav--bar">
+             <h1 className="nav--text">my travel journal</h1>
+            </nav>
+             <img src={`${props.imageUrl}`} className="card--image" />
+             <span className="card--location">{props.location}</span>
+            <a className="card--url" href={props.googleMapsUrl}>View On Google Maps</a>
+            <span className="card--title">{props.title}</span>
+                <span className="card--date">{props.startDate} - {props.endDate}</span>
+                <span className="card--description">{props.description}</span>
+              </div>
+         </div>
+    )
+}
+---------------------------------------------------------------------------------------------
+App.js
+
+import React from "react"
+import data from "./data"
+import Separate from "./components/Separate"
+
+
+
+export default function App(){
+    const separates = data.map(item => {
+        return(
+            <Separate
+                title={item.title}
+                location={item.location}
+                googleMapsUrl={item.googleMapsUrl}
+                startDate={item.startDate}
+                endDate={item.endDate}
+                description={item.description}
+                imageUrl={item.imageUrl}
+                
+            
+      />
+        )
+    })
+ //   console.log({separates})
+    return(
+       <div>
+       {separates}
+       </div>
+       
+  )    
+}
+---------------------------------------------------------------------------------------------
+css.js
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    height: 100px;
+position: flex;
+
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+
+position: flex;
+width: 704px;
+height: 550px;
+background: #FFFFFF;
+
+}
+
+.card--image {
+    margin-top: 45px;
+     margin-left: 40px;
+      margin-right: 19px;
+       margin-bottom: 36px;
+position: flex;
+width: 125px;
+height: 168px;
+padding: 0px 0px 0px 0px;
+background: url(.png);
+border-radius: 5px;
+
+
+
+}
+.nav--bar {
+padding: 10px 10px 20px 0px;
+width: auto;
+height: 55px;
+
+
+background: #F55A5A;
+
+}
+
+.nav--text {
+
+    position: relative;
+    margin: 0px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    text-align: center;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500px;
+font-size: 14.4608px;
+line-height: 18px;
+letter-spacing: -0.075em;
+padding: 0px 0px 50% 0px;
+color: #FFFFFF;
+}
+
+.card--location {
+     margin-top: 64px;
+     margin-left: 30px;
+      margin-right: 12px;
+       margin-bottom: 7px;
+    position: absolute;
+width: 40px;
+height: 10px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 10.24px;
+line-height: 12px;
+letter-spacing: 0.17em;
+
+color: #2B283A;
+    
+}
+
+.card--title {
+         margin-top: 85px;
+     margin-left: 25px;
+      margin-right: 40px;
+       margin-bottom: 7px;
+position: absolute;
+width: 326px;
+height: 40px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 30px;
+
+color: #2B283A;
+
+}
+.card--date {
+         margin-top: 125px;
+     margin-left: 25px;
+      margin-right: 40px;
+       margin-bottom: 7px;
+position: absolute;
+width: 319px;
+height: 11px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 10.24px;
+line-height: 12px;
+color: #2B283A;
+
+}
+.card--description {
+             margin-top: 155px;
+     margin-left: 25px;
+      margin-right: 40px;
+       margin-bottom: 7px;
+position: absolute;
+width: 326px;
+height: 45px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 10.24px;
+line-height: 150%;
+/* or 15px */
+color: #2B283A;
+}
+
+.card--url{
+margin-top: 64px;
+margin-left: 70px;
+margin-right: 12px;
+margin-bottom: 7px;
+position: absolute;
+width: 106px;
+height: 13px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 10.24px;
+line-height: 12px;
+
+/* identical to box height */
+text-decoration-line: underline;
+
+color: #918E9B;
+
+
+    
+}
+
+------------------------------------------------------------------------------------------
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+ReactDOM.render(<App />, document.getElementById("root"))
+------------------------------------------------------------------------------------------
+index.html
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+------------------------------------------------------------------------------------------
+
+data.js
+
+export default [
+    {
+        title: "Mount Fuji",
+        location: "Japan",
+        googleMapsUrl: "https://goo.gl/maps/1DGM5WrWnATgkSNB8",
+        startDate: "12 Jan, 2021",
+        endDate: "24 Jan, 2021",
+        description: "Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.",
+        imageUrl: "https://source.unsplash.com/WLxQvbMyfas"
+    }
+]
+------------------------------------------------------------------------------------------

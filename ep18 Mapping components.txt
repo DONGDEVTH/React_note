@@ -1,0 +1,82 @@
+jokesData.js
+
+export default [
+    {
+        setup: "I got my daughter a fridge for her birthday.",
+        punchline: "I can't wait to see her face light up when she opens it."
+    },
+    {
+        setup: "How did the hacker escape the police?",
+        punchline: "He just ransomware!"
+    },
+    {
+        setup: "Why don't pirates travel on mountain roads?",
+        punchline: "Scurvy."
+    },
+    {
+        setup: "Why do bees stay in the hive in the winter?",
+        punchline: "Swarm."
+    },
+    {
+        setup: "What's the best thing about Switzerland?",
+        punchline: "I don't know, but the flag is a big plus!"
+    }
+]
+---------------------------------------------------------------------------------------------
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+
+ReactDOM.render(<App />, document.getElementById("root"))
+---------------------------------------------------------------------------------------------
+Index.html
+
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+---------------------------------------------------------------------------------------------
+Joke.js
+
+import React from "react"
+
+export default function Joke(props) {
+    return (
+        <div>
+            {props.setup && <h3>Setup: {props.setup}</h3>}
+            <p>Punchline: {props.punchline}</p>
+            <hr />
+        </div>
+    )
+}
+---------------------------------------------------------------------------------------------
+App.js
+
+import React from "react"
+import Joke from "./Joke"
+import jokesData from "./jokesData"
+
+export default function App() {
+    const jokeElements = jokesData.map(joke => {
+        return <Joke setup={joke.setup} punchline={joke.punchline} />
+    })
+    return (
+        <div>
+            {jokeElements}
+        </div>
+    )
+}
+---------------------------------------------------------------------------------------------
+
+

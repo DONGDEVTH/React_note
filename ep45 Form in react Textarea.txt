@@ -1,0 +1,109 @@
+Form.js
+
+import React from "react"
+
+export default function Form() {
+    const [formData, setFormData] = React.useState(
+        {firstName: "", lastName: "", email: "", comments: ""}
+    )
+    
+    console.log(formData.comments)
+    
+    function handleChange(event) {
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+    
+    /**
+     * Challenge: Add a textarea for "comments" to the form
+     * Make sure to update state when it changes.
+     */
+    
+    return (
+        <form>
+            <input
+                type="text"
+                placeholder="First Name"
+                onChange={handleChange}
+                name="firstName"
+                value={formData.firstName}
+            />
+            <input
+                type="text"
+                placeholder="Last Name"
+                onChange={handleChange}
+                name="lastName"
+                value={formData.lastName}
+            />
+            <input
+                type="email"
+                placeholder="Email"
+                onChange={handleChange}
+                name="email"
+                value={formData.email}
+            />
+            <textarea 
+                value={formData.comments}
+                placeholder="Comments"
+                onChange={handleChange}
+                name="comments"
+            />
+        </form>
+    )
+}
+
+
+------------------------------------------------------------------------------------------------------------
+index.html
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+------------------------------------------------------------------------------------------------------------
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import Form from "./Form"
+
+ReactDOM.render(<Form />, document.getElementById("root"))
+------------------------------------------------------------------------------------------------------------
+Style.css
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+input {
+    margin-bottom: 15px;
+    height: 30px;
+    text-indent: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: block;
+}
+
+textarea {
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: block;
+    
+}
+------------------------------------------------------------------------------------------------------------
+

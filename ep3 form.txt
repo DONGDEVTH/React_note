@@ -1,0 +1,153 @@
+Header.js
+
+import React from "react"
+
+export default function Header() {
+    return (
+        <header className="header">
+            <img 
+                src="./images/troll-face.png" 
+                className="header--image"
+            />
+            <h2 className="header--title">Meme Generator</h2>
+            <h4 className="header--project">React Course - Project 3</h4>
+        </header>
+    )
+}
+-------------------------------------------------------------------------------
+App.js
+
+import React from "react"
+import Header from "./components/Header"
+import Meme from "./components/Meme"
+/**
+ * Challenge: 
+ * - Create a Meme component.
+ * - Inside the Meme component, render a styled form
+ *   with our 2 inputs and the button.
+ * - Don't worry about adding any functionality yet
+ */
+export default function App() {
+    return (
+        <div>
+            <Header />
+            <Meme />
+        </div>
+    )
+}
+
+-------------------------------------------------------------------------------
+index.html
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+-------------------------------------------------------------------------------
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+-------------------------------------------------------------------------------
+Meme.js
+
+import React from "react"
+
+export default function Meme() {
+    return (
+        <main>
+            <form className="form">
+                <input 
+                    type="text"
+                    placeholder="Top text"
+                    className="form--input"
+                />
+                <input 
+                    type="text"
+                    placeholder="Bottom text"
+                    className="form--input"
+                />
+                <button 
+                    className="form--button"
+                >
+                    Get a new meme image 🖼
+                </button>
+            </form>
+        </main>
+    )
+}
+-------------------------------------------------------------------------------
+Style.css
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    margin: 0;
+}
+
+main {
+    padding: 36px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    color: white;
+    padding: 20px;
+}
+
+.header--image {
+    height: 100%;
+    margin-right: 6px;
+}
+
+.header--title {
+    font-size: 1.25rem;
+    margin-right: auto;
+}
+
+.header--project {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.form {
+    display: grid;
+    grid-template: 40px 40px / 1fr 1fr;
+    gap: 17px;
+}
+
+.form--input {
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+
+.form--button {
+    grid-column: 1 / -1;
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+

@@ -1,0 +1,61 @@
+App.js
+
+import React from "react"
+
+export default function App() {
+    return (
+        <main></main>
+    )
+}
+---------------------------------------------------------------------------------
+index.html
+
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Karla:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+---------------------------------------------------------------------------------
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+/**
+ * Challenge: Start a brand new React app!
+ * - Create a separate App component
+ * - Import and render the App component here
+ * - In the App component, render a <main> element
+ * - Style everything to look like the slide
+ */
+
+---------------------------------------------------------------------------------
+style.css
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0B2434;
+    padding: 20px;
+}
+
+main {
+    background-color: #F5F5F5;
+    height: 400px;
+    max-width: 800px;
+    border-radius: 5px;
+}
+---------------------------------------------------------------------------------
+

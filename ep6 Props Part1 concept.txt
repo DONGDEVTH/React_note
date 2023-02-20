@@ -1,0 +1,18 @@
+index.html
+
+<html>
+    <head></head>
+    <body>
+        <a href="https://google.com">This is a link</a>
+        <img src="" />
+        <input placeholder="First Name" type="radio" />
+    </body>
+</html>
+
+--------------------------------------------------------------------------------
+index.js
+
+function addTwoNumbersTogether(a, b) {
+    return a + b
+}
+

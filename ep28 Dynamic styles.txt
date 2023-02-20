@@ -1,0 +1,87 @@
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+ReactDOM.render(<App darkMode={true} />, document.getElementById("root"))
+
+--------------------------------------------------------------------------------------------
+index.html
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+--------------------------------------------------------------------------------------------
+boxes.js
+
+export default [
+    {
+        id: 1,
+        on: true
+    },   
+    {
+        id: 2,
+        on: false
+    },   
+    {
+        id: 3,
+        on: true
+    },   
+    {
+        id: 4,
+        on: true
+    },   
+    {
+        id: 5,
+        on: false
+    },   
+    {
+        id: 6,
+        on: false
+    },   
+]
+--------------------------------------------------------------------------------------------
+App.js
+
+import React from "react"
+import boxes from "./boxes"
+
+export default function App(props) {
+    const [squares, setSquares] = React.useState(boxes)
+    
+    const styles = {
+        backgroundColor: props.darkMode ? "#222222" : "#cccccc"
+    }
+    
+    const squareElements = squares.map(square => (
+        <div style={styles} className="box" key={square.id}></div>
+    ))
+    return (
+        <main>
+            {squareElements}
+        </main>
+    )
+}
+
+--------------------------------------------------------------------------------------------
+Style.css
+
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 5px;
+}

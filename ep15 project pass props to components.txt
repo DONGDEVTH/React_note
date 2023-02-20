@@ -1,0 +1,43 @@
+App.js
+
+import React from "react"
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import Card from "./components/Card"
+
+export default function App() {
+            // <Hero />
+    return (
+        <div>
+            <Navbar />
+            <Card 
+                img="katie-zaferes.png"
+                rating="5.0"
+                reviewCount={6}
+                country="USA"
+                title="Life Lessons with Katie Zaferes"
+                price={136}
+            />
+        </div>
+    )
+}
+------------------------------------------------------------------------
+Card.js
+
+import React from "react"
+
+export default function Card(props) {
+    return (
+        <div className="card">
+            <img src={`../images/${props.img}`} className="card--image" />
+            <div className="card--stats">
+                <img src="../images/star.png" className="card--star" />
+                <span>{props.rating}</span>
+                <span className="gray">({props.reviewCount}) • </span>
+                <span className="gray">{props.country}</span>
+            </div>
+            <p>{props.title}</p>
+            <p><span className="bold">From ${props.price}</span> / person</p>
+        </div>
+    )
+}
